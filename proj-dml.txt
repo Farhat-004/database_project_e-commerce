@@ -1,0 +1,140 @@
+SQL> disconnect
+Disconnected from Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+SQL> CREATE USER C##FARHAT IDENTIFIED BY DBMS123;
+SP2-0640: Not connected
+SQL> CONNECT SYSTEM
+Connected.
+SQL> CREATE USER C##FARHAT IDENTIFIED BY DBMS123;
+
+User created.
+
+SQL> GRANT ALL PRIVILEGES TO C##FARHAT;
+
+Grant succeeded.
+
+SQL> DISCONNECT
+Disconnected from Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+SQL> CREATE TABLE USER (
+  2  USER_ID NUMBER(30),
+  3  USER_NAME VARCHAR2(80),
+  4  ADDRESS VARCHAR2(90),
+  5  PHONE VARCHAR2(80),
+  6  POSTAL_CODE NUMBER(30),
+  7  COUNTRY VARCHAR2(50),
+  8  CITY VARCHAR2(50),
+  9  PRIMARY KEY (USER_ID));
+SP2-0640: Not connected
+SQL> CONNECT SYSTEM
+Connected.
+SQL> CREATE TABLE USER (
+  2  USER_ID NUMBER(30),
+  3  USER_NAME VARCHAR2(80),
+  4  ADDRESS VARCHAR2(90),
+  5  PHONE VARCHAR2(80),
+  6  POSTAL_CODE NUMBER(30),
+  7  COUNTRY VARCHAR2(50),
+  8  CITY VARCHAR2(50),
+  9  PRIMARY KEY (USER_ID));
+CREATE TABLE USER (
+             *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> CREATE TABLE USERS (
+  2  USER_ID NUMBER(30),
+  3  USER_NAME VARCHAR2(80),
+  4  ADDRESS VARCHAR2(90),
+  5  PHONE VARCHAR2(80),
+  6  POSTAL_CODE NUMBER(30),
+  7  
+SQL> 
+SQL> CONNECT C##FARHAT;
+Connected.
+SQL> CREATE TABLE USERS (
+  2  USER_ID NUMBER(30),
+  3  USER_NAME VARCHAR2(80),
+  4  ADDRESS VARCHAR2(90),
+  5  PHONE VARCHAR2(80),
+  6  POSTAL_CODE NUMBER(30),
+  7  COUNTRY VARCHAR2(50),
+  8  CITY VARCHAR2(50),
+  9  PRIMARY KEY (USER_ID));
+
+Table created.
+
+SQL> DESCRIBE USERS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ USER_ID                                   NOT NULL NUMBER(30)
+ USER_NAME                                          VARCHAR2(80)
+ ADDRESS                                            VARCHAR2(90)
+ PHONE                                              VARCHAR2(80)
+ POSTAL_CODE                                        NUMBER(30)
+ COUNTRY                                            VARCHAR2(50)
+ CITY                                               VARCHAR2(50)
+
+SQL> CREATE TABLE PRODUCT (
+  2  PRODUCT_ID NUMBER(30),
+  3  PRODUCT_NAME VARCHAR2(80),
+  4  PRODUCT_PRICE NUMBER(10,4),
+  5  PRODUCT_QUANTITY NUMBER(4),
+  6  PRIMARY KEY (PRODUCT_ID));
+
+Table created.
+
+SQL> DESCRIBE PRODUCT;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PRODUCT_ID                                NOT NULL NUMBER(30)
+ PRODUCT_NAME                                       VARCHAR2(80)
+ PRODUCT_PRICE                                      NUMBER(10,4)
+ PRODUCT_QUANTITY                                   NUMBER(4)
+
+SQL> CREATE TABLE ORDERS (
+  2  ORDER_ID NUMBER(30),
+  3  USER_ID NUMBER(30),
+  4  PRODUCT_ID NUMBER(30),
+  5  ORDER_DATE DATE,
+  6  DELIVERY_DATE DATE NOT NULL,
+  7  CONSTRAINT CHECK_DATE CHECK (ORDER_DATE < DELIVERY_DATE),
+  8  STATUS VARCHAR2(50) CHECK (STATUS IN ('PENDING','SHIPPING','DELIVERED')),
+  9  PRIMARY KEY (ORDER_ID),
+ 10  FOREIGN KEY (USER_ID) REFERENCES USERS(USER_ID),
+ 11  FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID));
+
+Table created.
+
+SQL> DESCRIBE ORDERS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ORDER_ID                                  NOT NULL NUMBER(30)
+ USER_ID                                            NUMBER(30)
+ PRODUCT_ID                                         NUMBER(30)
+ ORDER_DATE                                         DATE
+ DELIVERY_DATE                             NOT NULL DATE
+ STATUS                                             VARCHAR2(50)
+
+SQL> CREATE TABLE ORDER_ITEMS (
+  2  ORDER_ITEM_ID NUMBER(30),
+  3  ORDER_ID NUMBER(30),
+  4  PRODUCT_ID NUMBER(30),
+  5  QUANTITY NUMBER(30),
+  6  TOTAL_PRICE NUMBER(30) NOT NULL,
+  7  PRIMARY KEY (ORDER_ITEM_ID),
+  8  FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID));
+
+Table created.
+
+SQL> DESCRIBE ORDER_ITEMS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ORDER_ITEM_ID                             NOT NULL NUMBER(30)
+ ORDER_ID                                           NUMBER(30)
+ PRODUCT_ID                                         NUMBER(30)
+ QUANTITY                                           NUMBER(30)
+ TOTAL_PRICE                               NOT NULL NUMBER(30)
+
+SQL> SPOOL OFF

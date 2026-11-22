@@ -98,4 +98,31 @@ SQL> DESCRIBE ORDER_ITEMS;
  QUANTITY                                           NUMBER(30)
  TOTAL_PRICE                               NOT NULL NUMBER(30)
 
-SQL> SPOOL OFF
+SQL> ALTER TABLE ORDERS DROP COLUMN PRODUCT_ID;
+
+Table altered.
+
+SQL> DESCRIBE ORDERS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ORDER_ID                                  NOT NULL NUMBER(30)
+ USER_ID                                            NUMBER(30)
+ ORDER_DATE                                         DATE
+ DELIVERY_DATE                             NOT NULL DATE
+ STATUS                                             VARCHAR2(50)
+
+SQL> ALTER TABLE ORDER_ITEMS ADD CONSTRAINT FK_ORDER_ID FOREIGN KEY (ORDER_ID) REFERENCES ORDERS(ORDER_ID);
+
+Table altered.
+
+SQL> DESCRIBE ORDER_ITEMS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ORDER_ITEM_ID                             NOT NULL NUMBER(30)
+ ORDER_ID                                           NUMBER(30)
+ PRODUCT_ID                                         NUMBER(30)
+ QUANTITY                                           NUMBER(30)
+ TOTAL_PRICE                               NOT NULL NUMBER(30)
+
+SQL> SPOOL OFF;
+

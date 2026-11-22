@@ -12,7 +12,7 @@ An Oracle Database 21c Express Edition project that models the core data for a s
 
 | File | Description |
 | --- | --- |
-| `proj-ddl.txt` | Creates the `C##FARHAT` database user, grants privileges, creates the tables, and adds the required foreign key. |
+| `proj-ddl.txt` | Creates the `FARHAT` database user, grants privileges, creates the tables, and adds the required foreign key. |
 | `proj-dml.txt` | Inserts sample users, products, orders, and order items, displays the records, and commits the transaction. |
 
 ## Database Schema

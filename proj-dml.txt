@@ -1,0 +1,161 @@
+<SQL> INSERT INTO USERS VALUES (1, 'Rahim Ahmed', 'Dhanmondi, Dhaka', '01712345678', 1205, 'Bangladesh', 'Dhaka');
+<SQL> INSERT INTO USERS VALUES (2, 'Karim Hasan', 'Uttara, Dhaka', '01812345678', 1230, 'Bangladesh', 'Dhaka');
+<SQL> INSERT INTO USERS VALUES (3, 'Nusrat Jahan', 'Mirpur, Dhaka', '01912345678', 1216, 'Bangladesh', 'Dhaka');
+<SQL> INSERT INTO USERS VALUES (4, 'Sadia Islam', 'Agrabad, Chittagong', '01612345678', 4100, 'Bangladesh', 'Chittagong');
+<SQL> INSERT INTO USERS VALUES (5, 'Tanvir Hossain', 'Zindabazar, Sylhet', '01512345678', 3100, 'Bangladesh', 'Sylhet');
+<SQL> INSERT INTO USERS VALUES (6, 'Mehedi Hasan', 'Sonadanga, Khulna', '01798765432', 9100, 'Bangladesh', 'Khulna');
+<SQL> INSERT INTO USERS VALUES (7, 'Ayesha Rahman', 'Rajpara, Rajshahi', '01898765432', 6000, 'Bangladesh', 'Rajshahi');
+<SQL> INSERT INTO USERS VALUES (8, 'Fahim Chowdhury', 'Kotwali, Barisal', '01998765432', 8200, 'Bangladesh', 'Barisal');
+<SQL> INSERT INTO USERS VALUES (9, 'Samira Akter', 'Gulshan, Dhaka', '01698765432', 1212, 'Bangladesh', 'Dhaka');
+<SQL> INSERT INTO USERS VALUES (10, 'Arif Mahmud', 'Banani, Dhaka', '01598765432', 1213, 'Bangladesh', 'Dhaka');
+
+10 row created.
+
+<SQL> SELECT * FROM USERS;
+
+
+<SQL> INSERT INTO PRODUCT VALUES (1, 'Laptop', 65000, 15);
+<SQL> INSERT INTO PRODUCT VALUES (2, 'Smartphone', 25000, 30);
+<SQL> INSERT INTO PRODUCT VALUES (3, 'Headphones', 2500, 50);
+<SQL> INSERT INTO PRODUCT VALUES (4, 'Keyboard', 1500, 40);
+<SQL> INSERT INTO PRODUCT VALUES (5, 'Mouse', 800, 60);
+<SQL> INSERT INTO PRODUCT VALUES (6, 'Monitor', 18000, 20);
+<SQL> INSERT INTO PRODUCT VALUES (7, 'Smart Watch', 4500, 25);
+<SQL> INSERT INTO PRODUCT VALUES (8, 'Bluetooth Speaker', 3000, 35);
+<SQL> INSERT INTO PRODUCT VALUES (9, 'Power Bank', 1800, 45);
+SQL> INSERT INTO PRODUCT VALUES (10, 'USB Flash Drive', 700, 100);
+
+10 row created.
+
+
+<SQL> SELECT * FROM USERS;
+
+   USER_ID USER_NAME                                                                        ADDRESS                                                                                                     
+---------- -------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------                  
+PHONE                                                                            POSTAL_CODE COUNTRY                                            CITY                                                    
+-------------------------------------------------------------------------------- ----------- -------------------------------------------------- --------------------------------------------------      
+         1 Rahim Ahmed                                                                      Dhanmondi, Dhaka                                                                                            
+01712345678                                                                             1205 Bangladesh                                         Dhaka                                                   
+                                                                                                                                                                                                        
+         2 Karim Hasan                                                                      Uttara, Dhaka                                                                                               
+01812345678                                                                             1230 Bangladesh                                         Dhaka                                                   
+                                                                                                                                                                                                        
+         3 Nusrat Jahan                                                                     Mirpur, Dhaka                                                                                               
+01912345678                                                                             1216 Bangladesh                                         Dhaka                                                   
+                                                                                                                                                                                                        
+         4 Sadia Islam                                                                      Agrabad, Chittagong                                                                                         
+01612345678                                                                             4100 Bangladesh                                         Chittagong                                              
+                                                                                                                                                                                                        
+         5 Tanvir Hossain                                                                   Zindabazar, Sylhet                                                                                          
+01512345678                                                                             3100 Bangladesh                                         Sylhet                                                  
+                                                                                                                                                                                                        
+         6 Mehedi Hasan                                                                     Sonadanga, Khulna                                                                                           
+01798765432                                                                             9100 Bangladesh                                         Khulna                                                  
+                                                                                                                                                                                                        
+         7 Ayesha Rahman                                                                    Rajpara, Rajshahi                                                                                           
+01898765432                                                                             6000 Bangladesh                                         Rajshahi                                                
+                                                                                                                                                                                                        
+         8 Fahim Chowdhury                                                                  Kotwali, Barisal                                                                                            
+01998765432                                                                             8200 Bangladesh                                         Barisal                                                 
+                                                                                                                                                                                                        
+         9 Samira Akter                                                                     Gulshan, Dhaka                                                                                              
+01698765432                                                                             1212 Bangladesh                                         Dhaka                                                   
+                                                                                                                                                                                                        
+        10 Arif Mahmud                                                                      Banani, Dhaka                                                                                               
+01598765432                                                                             1213 Bangladesh                                         Dhaka                                                   
+                                                                                                                                                                                                        
+
+10 rows selected.
+
+
+<SQL> SET LINESIZE 200
+<SQL> SET PAGESIZE 100
+
+
+<SQL> SELECT * FROM PRODUCT;
+
+PRODUCT_ID PRODUCT_NAME                                                                     PRODUCT_PRICE PRODUCT_QUANTITY                                                                              
+---------- -------------------------------------------------------------------------------- ------------- ----------------                                                                              
+         1 Laptop                                                                                   65000               15                                                                              
+         2 Smartphone                                                                               25000               30                                                                              
+         3 Headphones                                                                                2500               50                                                                              
+         4 Keyboard                                                                                  1500               40                                                                              
+         5 Mouse                                                                                      800               60                                                                              
+         6 Monitor                                                                                  18000               20                                                                              
+         7 Smart Watch                                                                               4500               25                                                                              
+         8 Bluetooth Speaker                                                                         3000               35                                                                              
+         9 Power Bank                                                                                1800               45                                                                              
+        10 USB Flash Drive                                                                            700              100                                                                              
+
+10 rows selected.
+
+<SQL> INSERT INTO ORDERS VALUES (1, 1, TO_DATE('2026-11-01','YYYY-MM-DD'), TO_DATE('2026-11-05','YYYY-MM-DD'), 'DELIVERED');
+
+1 row created.
+
+<SQL> 
+<SQL> INSERT INTO ORDERS VALUES (2, 2, TO_DATE('2026-11-02','YYYY-MM-DD'), TO_DATE('2026-11-07','YYYY-MM-DD'), 'DELIVERED');
+<SQL> INSERT INTO ORDERS VALUES (3, 3, TO_DATE('2026-11-05','YYYY-MM-DD'), TO_DATE('2026-11-10','YYYY-MM-DD'), 'SHIPPING');
+<SQL> INSERT INTO ORDERS VALUES (4, 4, TO_DATE('2026-11-06','YYYY-MM-DD'), TO_DATE('2026-11-12','YYYY-MM-DD'), 'PENDING');
+<SQL> INSERT INTO ORDERS VALUES (5, 5, TO_DATE('2026-11-08','YYYY-MM-DD'), TO_DATE('2026-11-13','YYYY-MM-DD'), 'SHIPPING');
+<SQL> INSERT INTO ORDERS VALUES (6, 6, TO_DATE('2026-11-09','YYYY-MM-DD'), TO_DATE('2026-11-14','YYYY-MM-DD'), 'PENDING');
+<SQL> INSERT INTO ORDERS VALUES (7, 7, TO_DATE('2026-11-10','YYYY-MM-DD'), TO_DATE('2026-11-15','YYYY-MM-DD'), 'SHIPPING');
+<SQL> INSERT INTO ORDERS VALUES (8, 8, TO_DATE('2026-11-12','YYYY-MM-DD'), TO_DATE('2026-11-17','YYYY-MM-DD'), 'PENDING');
+<SQL> INSERT INTO ORDERS VALUES (9, 9, TO_DATE('2026-11-14','YYYY-MM-DD'), TO_DATE('2026-11-19','YYYY-MM-DD'), 'PENDING');
+<SQL> INSERT INTO ORDERS VALUES (10, 10, TO_DATE('2026-11-15','YYYY-MM-DD'), TO_DATE('2026-11-20','YYYY-MM-DD'), 'DELIVERED');
+
+10 row created.
+
+SQL> SELECT * FROM ORDERS;
+
+  ORDER_ID    USER_ID ORDER_DAT DELIVERY_ STATUS                                                                                                                                                        
+---------- ---------- --------- --------- --------------------------------------------------                                                                                                            
+         1          1 01-NOV-26 05-NOV-26 DELIVERED                                                                                                                                                     
+         2          2 02-NOV-26 07-NOV-26 DELIVERED                                                                                                                                                     
+         3          3 05-NOV-26 10-NOV-26 SHIPPING                                                                                                                                                      
+         4          4 06-NOV-26 12-NOV-26 PENDING                                                                                                                                                       
+         5          5 08-NOV-26 13-NOV-26 SHIPPING                                                                                                                                                      
+         6          6 09-NOV-26 14-NOV-26 PENDING                                                                                                                                                       
+         7          7 10-NOV-26 15-NOV-26 SHIPPING                                                                                                                                                      
+         8          8 12-NOV-26 17-NOV-26 PENDING                                                                                                                                                       
+         9          9 14-NOV-26 19-NOV-26 PENDING                                                                                                                                                       
+        10         10 15-NOV-26 20-NOV-26 DELIVERED                                                                                                                                                     
+
+10 rows selected.
+
+<SQL> INSERT INTO ORDER_ITEMS VALUES (1, 1, 1, 1, 65000);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (2, 2, 2, 1, 25000);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (3, 3, 3, 2, 5000);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (4, 4, 4, 2, 3000);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (5, 5, 5, 3, 2400);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (6, 6, 6, 1, 18000);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (7, 7, 7, 2, 9000);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (8, 8, 8, 1, 3000);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (9, 9, 9, 2, 3600);
+<SQL> INSERT INTO ORDER_ITEMS VALUES (10, 10, 10, 5, 3500);
+
+10 row created.
+
+SQL> SELECT * FROM ORDER_ITEMS;
+
+ORDER_ITEM_ID   ORDER_ID PRODUCT_ID   QUANTITY TOTAL_PRICE                                                                                                                                              
+------------- ---------- ---------- ---------- -----------                                                                                                                                              
+            1          1          1          1       65000                                                                                                                                              
+            2          2          2          1       25000                                                                                                                                              
+            3          3          3          2        5000                                                                                                                                              
+            4          4          4          2        3000                                                                                                                                              
+            5          5          5          3        2400                                                                                                                                              
+            6          6          6          1       18000                                                                                                                                              
+            7          7          7          2        9000                                                                                                                                              
+            8          8          8          1        3000                                                                                                                                              
+            9          9          9          2        3600                                                                                                                                              
+           10         10         10          5        3500                                                                                                                                              
+
+10 rows selected.
+
+SQL> COMMIT;
+
+Commit complete.
+
+
+<SQL> SPOOL OFF
